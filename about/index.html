@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — RhythmDo</title>
+    <meta name="description" content="RhythmDo is built around how you actually work. Learn about the mission and the three working styles." />
+    <meta name="theme-color" content="#06090F" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        bg: '#06090F', surface: '#0E1117', surface2: '#161B24', card: '#1F2633',
+                        emerald1: '#34D399', emerald2: '#047857',
+                        gold: '#FBBF24', violet1: '#A78BFA', red1: '#FF6B6B',
+                        text1: '#E5E7EB', text2: '#9CA3AF', outline1: '#374151'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        html, body { background: #06090F; color: #E5E7EB; font-family: 'Inter', system-ui, sans-serif; }
+        .dot-bg { background-image: radial-gradient(circle, #374151 1px, transparent 1px); background-size: 22px 22px; }
+        .gradient-text {
+            background: linear-gradient(90deg, #34D399 0%, #A78BFA 50%, #FBBF24 100%);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+        .gradient-border { position: relative; background: #0E1117; border-radius: 1rem; }
+        .gradient-border::before {
+            content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit;
+            background: linear-gradient(135deg, #34D399, #A78BFA, #FBBF24);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+        }
+        .glow-emerald { box-shadow: 0 0 32px rgba(52, 211, 153, 0.25); }
+        html { scroll-behavior: smooth; }
+        ::selection { background: rgba(52,211,153,.35); color: #E5E7EB; }
+    </style>
+</head>
+<body class="antialiased">
+
+<!-- Nav -->
+<header class="sticky top-0 z-40 backdrop-blur bg-bg/80 border-b border-outline1/40">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="/" class="flex items-center gap-2 group">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald1 glow-emerald group-hover:scale-110 transition"></span>
+            <span class="font-bold text-lg tracking-tight text-white">RhythmDo</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-text2">
+            <a href="/#features" class="hover:text-white transition">Features</a>
+            <a href="/#how" class="hover:text-white transition">How it works</a>
+            <a href="/#pricing" class="hover:text-white transition">Pro</a>
+            <a href="/about/" class="text-white">About</a>
+            <a href="/#download" class="hover:text-white transition">Download</a>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.oushen.rhythmdo"
+           target="_blank" rel="noopener"
+           class="bg-emerald1 hover:bg-emerald2 text-[#002114] font-bold rounded-xl px-4 py-2 text-sm transition glow-emerald">
+            Get it on Google Play
+        </a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+    <div class="absolute inset-0 dot-bg opacity-[0.3] pointer-events-none"></div>
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-violet1/10 blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-3xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24 text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-outline1 bg-surface/60 px-3 py-1 text-xs text-text2 mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald1"></span>
+            About RhythmDo
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.05] tracking-tight">
+            Built around how you <span class="gradient-text">actually work</span>.
+        </h1>
+        <p class="mt-6 text-lg text-text2 max-w-2xl mx-auto">
+            RhythmDo started as a personal tool to stop losing track of what to work on next. It became an app for anyone who wants to build a consistent focus habit — without complicated systems.
+        </p>
+    </div>
+</section>
+
+<!-- Mission -->
+<section class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+    <div class="rounded-2xl bg-surface border border-outline1 p-8 md:p-12">
+        <div class="text-xs uppercase tracking-[0.2em] text-emerald1">Our mission</div>
+        <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">
+            Focus isn&rsquo;t about doing more &mdash; it&rsquo;s about doing what matters, consistently.
+        </h2>
+        <p class="mt-6 text-text2 text-lg">
+            Most productivity apps force one workflow on everyone. RhythmDo respects that people work differently. That&rsquo;s why the app supports three working styles &mdash; each with its own home screen priorities and rhythm.
+        </p>
+    </div>
+
+    <!-- Three styles -->
+    <div class="mt-8 grid md:grid-cols-3 gap-4">
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 hover:border-emerald1/50 transition">
+            <div class="text-2xl">🏁</div>
+            <h3 class="mt-3 text-lg font-semibold text-white">Finisher</h3>
+            <p class="mt-2 text-sm text-text2">Loves closing tabs and clearing lists. Quick wins first, momentum builds naturally.</p>
+        </div>
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 hover:border-violet1/50 transition">
+            <div class="text-2xl">⚡</div>
+            <h3 class="mt-3 text-lg font-semibold text-white">Deep Worker</h3>
+            <p class="mt-2 text-sm text-text2">Thrives in long, uninterrupted blocks. Fewer sessions, higher intensity.</p>
+        </div>
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 hover:border-gold/50 transition">
+            <div class="text-2xl">🔁</div>
+            <h3 class="mt-3 text-lg font-semibold text-white">Consistency Builder</h3>
+            <p class="mt-2 text-sm text-text2">Wins by showing up every day. Streaks, small habits, steady progress.</p>
+        </div>
+    </div>
+</section>
+
+<!-- The app in numbers -->
+<section class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+    <div class="text-center max-w-2xl mx-auto">
+        <div class="text-xs uppercase tracking-[0.2em] text-emerald1">The app in numbers</div>
+        <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">Small app. Big rhythm.</h2>
+    </div>
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 text-center">
+            <div class="text-4xl font-extrabold gradient-text" data-count="3">3</div>
+            <div class="mt-2 text-sm text-text2">Languages supported</div>
+        </div>
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 text-center">
+            <div class="text-4xl font-extrabold gradient-text" data-count="8">8+</div>
+            <div class="mt-2 text-sm text-text2">Achievement badges</div>
+        </div>
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 text-center">
+            <div class="text-4xl font-extrabold gradient-text">Daily</div>
+            <div class="mt-2 text-sm text-text2">Challenges every day</div>
+        </div>
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 text-center">
+            <div class="text-4xl font-extrabold gradient-text" data-count="1">1</div>
+            <div class="mt-2 text-sm text-text2">Platform (Android)</div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+    <div class="gradient-border p-8 md:p-10 text-center">
+        <div class="text-xs uppercase tracking-[0.2em] text-emerald1">Get in touch</div>
+        <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">Questions, feedback, or partnership?</h2>
+        <p class="mt-4 text-text2">We read every message.</p>
+        <a href="mailto:contact@rhythmdo.app"
+           class="mt-6 inline-flex items-center gap-2 bg-emerald1 hover:bg-emerald2 text-[#002114] font-bold rounded-xl px-6 py-3 transition glow-emerald">
+            contact@rhythmdo.app
+        </a>
+        <p class="mt-4 text-xs text-text2">Or reach us on Google Play via the developer page.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-outline1/40 mt-8">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between text-sm text-text2">
+        <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald1"></span>
+            <span class="font-semibold text-white">RhythmDo</span>
+            <span class="text-text2">© 2026 · Built for makers, thinkers, and finishers.</span>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="/about/" class="hover:text-white transition">About</a>
+            <a href="/delete-account/" class="hover:text-white transition">Delete Account</a>
+            <a href="/privacy/" class="hover:text-white transition">Privacy Policy</a>
+            <a href="mailto:contact@rhythmdo.app" class="hover:text-white transition">Contact</a>
+        </div>
+        <div class="flex gap-4 text-xs">
+            <button class="hover:text-white transition">English</button>
+            <span class="text-outline1">·</span>
+            <button class="hover:text-white transition">Français</button>
+            <span class="text-outline1">·</span>
+            <button class="hover:text-white transition" dir="rtl">عربي</button>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple animated counter for [data-count] elements
+    const counters = document.querySelectorAll('[data-count]');
+    const animate = (el) => {
+        const target = parseInt(el.dataset.count, 10);
+        if (isNaN(target)) return;
+        const suffix = el.textContent.includes('+') ? '+' : '';
+        const dur = 1400;
+        const start = performance.now();
+        const step = (t) => {
+            const p = Math.min(1, (t - start) / dur);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.floor(target * eased) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+            else el.textContent = target + suffix;
+        };
+        requestAnimationFrame(step);
+    };
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); }
+        });
+    }, { threshold: 0.4 });
+    counters.forEach(c => io.observe(c));
+</script>
+
+</body>
+</html>

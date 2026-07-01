@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/USERNAME/public_html/
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R about $DEPLOYPATH
+    - /bin/cp -R delete-account $DEPLOYPATH
+    - /bin/cp -R .htaccess $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -R README.md $DEPLOYPATH

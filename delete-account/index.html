@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Delete Account &amp; Data — RhythmDo</title>
+    <meta name="description" content="Request deletion of your RhythmDo account and associated data." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#06090F" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        bg: '#06090F', surface: '#0E1117', surface2: '#161B24', card: '#1F2633',
+                        emerald1: '#34D399', emerald2: '#047857',
+                        gold: '#FBBF24', violet1: '#A78BFA', red1: '#FF6B6B',
+                        text1: '#E5E7EB', text2: '#9CA3AF', outline1: '#374151'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        html, body { background: #06090F; color: #E5E7EB; font-family: 'Inter', system-ui, sans-serif; }
+        .dot-bg { background-image: radial-gradient(circle, #374151 1px, transparent 1px); background-size: 22px 22px; }
+        .gradient-text {
+            background: linear-gradient(90deg, #34D399 0%, #A78BFA 50%, #FBBF24 100%);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+        .gradient-border { position: relative; background: #0E1117; border-radius: 1rem; }
+        .gradient-border::before {
+            content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit;
+            background: linear-gradient(135deg, #34D399, #A78BFA, #FBBF24);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+        }
+        .glow-emerald { box-shadow: 0 0 32px rgba(52, 211, 153, 0.25); }
+        html { scroll-behavior: smooth; }
+        ::selection { background: rgba(52,211,153,.35); color: #E5E7EB; }
+    </style>
+</head>
+<body class="antialiased">
+
+<!-- Nav -->
+<header class="sticky top-0 z-40 backdrop-blur bg-bg/80 border-b border-outline1/40">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="/" class="flex items-center gap-2 group">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald1 glow-emerald group-hover:scale-110 transition"></span>
+            <span class="font-bold text-lg tracking-tight text-white">RhythmDo</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-text2">
+            <a href="/#features" class="hover:text-white transition">Features</a>
+            <a href="/#how" class="hover:text-white transition">How it works</a>
+            <a href="/#pricing" class="hover:text-white transition">Pro</a>
+            <a href="/about/" class="hover:text-white transition">About</a>
+            <a href="/#download" class="hover:text-white transition">Download</a>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.oushen.rhythmdo"
+           target="_blank" rel="noopener"
+           class="bg-emerald1 hover:bg-emerald2 text-[#002114] font-bold rounded-xl px-4 py-2 text-sm transition glow-emerald">
+            Get it on Google Play
+        </a>
+    </nav>
+</header>
+
+<!-- Header -->
+<section class="relative overflow-hidden">
+    <div class="absolute inset-0 dot-bg opacity-[0.3] pointer-events-none"></div>
+    <div class="relative max-w-3xl mx-auto px-6 pt-16 pb-10">
+        <a href="/" class="text-sm text-text2 hover:text-emerald1 transition inline-flex items-center gap-1">
+            ← Back to RhythmDo.app
+        </a>
+        <div class="mt-8 inline-flex items-center gap-2 rounded-full border border-outline1 bg-surface/60 px-3 py-1 text-xs text-text2">
+            <span class="w-1.5 h-1.5 rounded-full bg-red1"></span>
+            Account &amp; data deletion
+        </div>
+        <h1 class="mt-5 text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+            Request Account &amp; Data Deletion
+        </h1>
+        <p class="mt-3 text-2xl font-semibold gradient-text">RhythmDo</p>
+    </div>
+</section>
+
+<!-- Content -->
+<section class="max-w-3xl mx-auto px-6 pb-12">
+    <div class="rounded-2xl bg-surface border border-outline1 p-6 md:p-8 text-text1 leading-relaxed">
+        <p class="text-text2">
+            If you have signed in to <span class="text-white font-semibold">RhythmDo</span> using your Google account and wish to have your account and associated data deleted, please submit a request using the form below.
+        </p>
+
+        <h2 class="mt-8 text-lg font-semibold text-white flex items-center gap-2">
+            <span class="w-1.5 h-5 rounded bg-emerald1"></span> What gets deleted
+        </h2>
+        <ul class="mt-3 space-y-2 text-text2 text-sm">
+            <li class="flex gap-2"><span class="text-emerald1 mt-0.5">✓</span> Your Firebase Authentication account (sign-in identity)</li>
+            <li class="flex gap-2"><span class="text-emerald1 mt-0.5">✓</span> Any Firebase-linked usage analytics associated with your user ID</li>
+        </ul>
+
+        <h2 class="mt-8 text-lg font-semibold text-white flex items-center gap-2">
+            <span class="w-1.5 h-5 rounded bg-gold"></span> What may be retained (and for how long)
+        </h2>
+        <ul class="mt-3 space-y-3 text-text2 text-sm">
+            <li class="flex gap-2">
+                <span class="text-gold mt-0.5">•</span>
+                <span><span class="text-text1 font-medium">Anonymized crash reports (Crashlytics):</span> retained up to 90 days per Google Firebase&rsquo;s standard data retention policy. These cannot be linked back to your identity after deletion.</span>
+            </li>
+            <li class="flex gap-2">
+                <span class="text-gold mt-0.5">•</span>
+                <span><span class="text-text1 font-medium">AdMob advertising interaction data:</span> handled by Google&rsquo;s advertising infrastructure. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-emerald1 hover:underline">Google&rsquo;s Privacy Policy</a>.</span>
+            </li>
+        </ul>
+
+        <div class="mt-8 rounded-xl bg-surface2 border border-outline1 p-4 text-sm text-text2">
+            <span class="text-white font-semibold">Note:</span>
+            All task data, sessions, badges, and preferences are stored <span class="text-white">locally on your device only</span> and are automatically removed when you uninstall the app. They are not stored on our servers.
+        </div>
+    </div>
+</section>
+
+<!-- How to request deletion — steps (Google Play requirement) -->
+<section class="max-w-3xl mx-auto px-6 pb-12">
+    <div class="rounded-2xl bg-surface border border-outline1 p-6 md:p-8">
+        <div class="text-xs uppercase tracking-[0.2em] text-emerald1">How to request deletion</div>
+        <h2 class="mt-2 text-2xl md:text-3xl font-semibold text-white">Steps to delete your RhythmDo account</h2>
+        <p class="mt-2 text-sm text-text2">Follow these steps to have your account and associated data removed.</p>
+
+        <ol class="mt-6 space-y-4">
+            <li class="flex gap-4">
+                <span class="flex-none w-9 h-9 rounded-full bg-emerald1 text-[#002114] font-bold flex items-center justify-center glow-emerald">1</span>
+                <div>
+                    <div class="text-white font-semibold">Fill in the form below</div>
+                    <p class="mt-1 text-sm text-text2">Enter the email address you used to sign in to RhythmDo with your Google account, then submit the form.</p>
+                </div>
+            </li>
+            <li class="flex gap-4">
+                <span class="flex-none w-9 h-9 rounded-full bg-emerald1 text-[#002114] font-bold flex items-center justify-center glow-emerald">2</span>
+                <div>
+                    <div class="text-white font-semibold">Or email us directly</div>
+                    <p class="mt-1 text-sm text-text2">
+                        Send an email to
+                        <a href="mailto:contact@rhythmdo.app?subject=Account%20Deletion%20Request" class="text-emerald1 hover:underline">contact@rhythmdo.app</a>
+                        with the subject &ldquo;Account Deletion Request&rdquo; from the address associated with your account.
+                    </p>
+                </div>
+            </li>
+            <li class="flex gap-4">
+                <span class="flex-none w-9 h-9 rounded-full bg-emerald1 text-[#002114] font-bold flex items-center justify-center glow-emerald">3</span>
+                <div>
+                    <div class="text-white font-semibold">We verify and process your request</div>
+                    <p class="mt-1 text-sm text-text2">Within 30 days, we will delete your Firebase Authentication account and linked usage analytics, then send a confirmation email.</p>
+                </div>
+            </li>
+            <li class="flex gap-4">
+                <span class="flex-none w-9 h-9 rounded-full bg-emerald1 text-[#002114] font-bold flex items-center justify-center glow-emerald">4</span>
+                <div>
+                    <div class="text-white font-semibold">Uninstall the app (optional)</div>
+                    <p class="mt-1 text-sm text-text2">Because tasks, sessions and badges live on your device, uninstalling RhythmDo removes any remaining local data.</p>
+                </div>
+            </li>
+        </ol>
+
+        <!-- Data summary table (satisfies "types of data deleted/kept + retention period") -->
+        <div class="mt-8 overflow-hidden rounded-xl border border-outline1">
+            <table class="w-full text-sm">
+                <thead class="bg-surface2 text-text2 text-xs uppercase tracking-wider">
+                    <tr>
+                        <th class="text-left px-4 py-3 font-medium">Data type</th>
+                        <th class="text-left px-4 py-3 font-medium">Action</th>
+                        <th class="text-left px-4 py-3 font-medium">Retention</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline1/60 text-text1">
+                    <tr>
+                        <td class="px-4 py-3">Firebase Authentication account</td>
+                        <td class="px-4 py-3"><span class="text-emerald1 font-medium">Deleted</span></td>
+                        <td class="px-4 py-3 text-text2">Within 30 days</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">Firebase-linked usage analytics</td>
+                        <td class="px-4 py-3"><span class="text-emerald1 font-medium">Deleted</span></td>
+                        <td class="px-4 py-3 text-text2">Within 30 days</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">Tasks, sessions, badges, preferences</td>
+                        <td class="px-4 py-3"><span class="text-emerald1 font-medium">Deleted</span></td>
+                        <td class="px-4 py-3 text-text2">On app uninstall (stored locally)</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">Anonymized crash reports (Crashlytics)</td>
+                        <td class="px-4 py-3"><span class="text-gold font-medium">Retained</span></td>
+                        <td class="px-4 py-3 text-text2">Up to 90 days (cannot be linked to you)</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">AdMob advertising interaction data</td>
+                        <td class="px-4 py-3"><span class="text-gold font-medium">Retained by Google</span></td>
+                        <td class="px-4 py-3 text-text2">Per <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-emerald1 hover:underline">Google&rsquo;s Privacy Policy</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Form -->
+<section class="max-w-3xl mx-auto px-6 pb-24">
+    <div class="gradient-border p-6 md:p-8">
+        <h2 class="text-2xl font-semibold text-white">Submit deletion request</h2>
+        <p class="mt-2 text-sm text-text2">
+            We will process your request within <span class="text-white">30 days</span> and confirm via email.
+        </p>
+
+        <!--
+            Default: this form uses mailto: so it works without any backend.
+            RECOMMENDED for production: replace the action below with either
+              - a Formspree endpoint: action="https://formspree.io/f/YOUR_ID" method="POST"
+              - or embed a Google Form via <iframe> below.
+        -->
+        <form id="delete-form"
+              action="mailto:contact@rhythmdo.app"
+              method="POST"
+              enctype="text/plain"
+              class="mt-6 space-y-5">
+            <div>
+                <label for="email" class="block text-sm font-medium text-text1">
+                    Email address used to sign in <span class="text-red1">*</span>
+                </label>
+                <input type="email" id="email" name="email" required
+                       placeholder="you@example.com"
+                       class="mt-2 w-full rounded-xl bg-surface border border-outline1 px-4 py-3 text-white placeholder-text2/60 focus:outline-none focus:border-emerald1 focus:ring-2 focus:ring-emerald1/30 transition" />
+            </div>
+
+            <div>
+                <label for="reason" class="block text-sm font-medium text-text1">
+                    Reason <span class="text-text2 font-normal">(optional)</span>
+                </label>
+                <select id="reason" name="reason"
+                        class="mt-2 w-full rounded-xl bg-surface border border-outline1 px-4 py-3 text-white focus:outline-none focus:border-emerald1 focus:ring-2 focus:ring-emerald1/30 transition">
+                    <option value="">Select a reason…</option>
+                    <option value="no_longer_use">I no longer use the app</option>
+                    <option value="privacy">Privacy concerns</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="notes" class="block text-sm font-medium text-text1">
+                    Additional notes <span class="text-text2 font-normal">(optional)</span>
+                </label>
+                <textarea id="notes" name="notes" rows="3"
+                          placeholder="Anything else we should know…"
+                          class="mt-2 w-full rounded-xl bg-surface border border-outline1 px-4 py-3 text-white placeholder-text2/60 focus:outline-none focus:border-emerald1 focus:ring-2 focus:ring-emerald1/30 transition"></textarea>
+            </div>
+
+            <label class="flex items-start gap-3 text-sm text-text2">
+                <input type="checkbox" required
+                       class="mt-0.5 w-4 h-4 rounded border-outline1 bg-surface text-emerald1 focus:ring-emerald1/40" />
+                <span>I understand this action is permanent and cannot be undone.</span>
+            </label>
+
+            <button type="submit"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald1 hover:bg-emerald2 text-[#002114] font-bold rounded-xl px-6 py-3 transition glow-emerald">
+                Submit Deletion Request
+            </button>
+        </form>
+
+        <!-- Confirmation message (shown after submit) -->
+        <div id="delete-confirm" class="hidden mt-6 rounded-xl bg-emerald1/10 border border-emerald1/40 p-4 text-sm text-text1">
+            <span class="text-emerald1 font-semibold">Request received.</span>
+            We will process your request within 30 days and confirm via email.
+        </div>
+    </div>
+
+    <p class="mt-6 text-xs text-text2 text-center">
+        Prefer email? Send your request directly to
+        <a href="mailto:contact@rhythmdo.app?subject=Account%20Deletion%20Request" class="text-emerald1 hover:underline">contact@rhythmdo.app</a>.
+    </p>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-outline1/40 mt-8">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between text-sm text-text2">
+        <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald1"></span>
+            <span class="font-semibold text-white">RhythmDo</span>
+            <span class="text-text2">© 2026 · Built for makers, thinkers, and finishers.</span>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="/about/" class="hover:text-white transition">About</a>
+            <a href="/delete-account/" class="hover:text-white transition">Delete Account</a>
+            <a href="/privacy/" class="hover:text-white transition">Privacy Policy</a>
+            <a href="mailto:contact@rhythmdo.app" class="hover:text-white transition">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Show confirmation after submit (mailto opens the mail client)
+    const form = document.getElementById('delete-form');
+    const confirm = document.getElementById('delete-confirm');
+    form.addEventListener('submit', () => {
+        setTimeout(() => { confirm.classList.remove('hidden'); confirm.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+    });
+</script>
+
+</body>
+</html>

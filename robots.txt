@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rhythmdo.app/sitemap.xml

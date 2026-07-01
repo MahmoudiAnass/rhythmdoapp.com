@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RhythmDo — Start faster. Keep your rhythm.</title>
+    <meta name="description" content="Turn tasks and projects into one clear session you can start in seconds. Build streaks. Level up. Free on Google Play." />
+
+    <meta property="og:title" content="RhythmDo — Start faster. Keep your rhythm." />
+    <meta property="og:description" content="Turn tasks and projects into one clear session you can start in seconds. Build streaks. Level up." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rhythmdo.app/" />
+    <meta name="theme-color" content="#06090F" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        bg: '#06090F',
+                        surface: '#0E1117',
+                        surface2: '#161B24',
+                        card: '#1F2633',
+                        emerald1: '#34D399',
+                        emerald2: '#047857',
+                        gold: '#FBBF24',
+                        violet1: '#A78BFA',
+                        red1: '#FF6B6B',
+                        text1: '#E5E7EB',
+                        text2: '#9CA3AF',
+                        outline1: '#374151'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        html, body { background: #06090F; color: #E5E7EB; font-family: 'Inter', system-ui, sans-serif; }
+        .dot-bg {
+            background-image: radial-gradient(circle, #374151 1px, transparent 1px);
+            background-size: 22px 22px;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #34D399 0%, #A78BFA 50%, #FBBF24 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-border {
+            position: relative;
+            background: #0E1117;
+            border-radius: 1rem;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #34D399, #A78BFA, #FBBF24);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+            pointer-events: none;
+        }
+        .glow-emerald { box-shadow: 0 0 32px rgba(52, 211, 153, 0.28); }
+        .glow-emerald-lg { box-shadow: 0 0 80px rgba(52, 211, 153, 0.25), 0 0 160px rgba(167, 139, 250, 0.15); }
+
+        /* Timer ring animation */
+        @keyframes ringSweep {
+            0%   { stroke-dashoffset: 720; }
+            60%  { stroke-dashoffset: 180; }
+            100% { stroke-dashoffset: 180; }
+        }
+        @keyframes ringPulse {
+            0%, 100% { opacity: .85; transform: scale(1); }
+            50%      { opacity: 1;   transform: scale(1.02); }
+        }
+        .ring-progress { animation: ringSweep 4s ease-out infinite alternate; }
+        .ring-pulse    { animation: ringPulse 3.5s ease-in-out infinite; transform-origin: center; }
+
+        @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+        .float { animation: floaty 5s ease-in-out infinite; }
+
+        /* Phone mockups */
+        .phone {
+            width: 260px;
+            aspect-ratio: 9 / 19;
+            border-radius: 36px;
+            background: #0E1117;
+            border: 1px solid #374151;
+            padding: 12px;
+            position: relative;
+            box-shadow: 0 30px 60px -20px rgba(0,0,0,.6), 0 0 0 1px rgba(52,211,153,.08) inset;
+        }
+        .phone::before {
+            content: '';
+            position: absolute;
+            top: 14px; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 6px; border-radius: 999px;
+            background: #161B24;
+        }
+        .phone-inner {
+            width: 100%; height: 100%;
+            border-radius: 26px;
+            background: linear-gradient(180deg, #06090F 0%, #0E1117 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Smooth scroll & selection */
+        html { scroll-behavior: smooth; }
+        ::selection { background: rgba(52,211,153,.35); color: #E5E7EB; }
+    </style>
+</head>
+<body class="antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-40 backdrop-blur bg-bg/80 border-b border-outline1/40">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="/" class="flex items-center gap-2 group">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald1 glow-emerald group-hover:scale-110 transition"></span>
+            <span class="font-bold text-lg tracking-tight text-white">RhythmDo</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-text2">
+            <a href="#features" class="hover:text-white transition">Features</a>
+            <a href="#how" class="hover:text-white transition">How it works</a>
+            <a href="#pricing" class="hover:text-white transition">Pro</a>
+            <a href="/about/" class="hover:text-white transition">About</a>
+            <a href="#download" class="hover:text-white transition">Download</a>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.oushen.rhythmdo"
+           target="_blank" rel="noopener"
+           class="bg-emerald1 hover:bg-emerald2 text-[#002114] font-bold rounded-xl px-4 py-2 text-sm transition glow-emerald">
+            Get it on Google Play
+        </a>
+    </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative overflow-hidden">
+    <div class="absolute inset-0 dot-bg opacity-[0.35] pointer-events-none"></div>
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-emerald1/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-violet1/10 blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 pt-20 pb-24 md:pt-28 md:pb-32 grid md:grid-cols-2 gap-16 items-center">
+        <div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-outline1 bg-surface/60 px-3 py-1 text-xs text-text2 mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald1"></span>
+                Now on Google Play · Android
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.05] tracking-tight">
+                Start faster.<br />
+                Keep your <span class="gradient-text">rhythm</span>.
+            </h1>
+            <p class="mt-6 text-lg text-text2 max-w-xl">
+                Turn tasks and projects into one clear session you can start in seconds. Build streaks. Level up.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4 items-center">
+                <a href="https://play.google.com/store/apps/details?id=com.oushen.rhythmdo"
+                   target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 bg-emerald1 hover:bg-emerald2 text-[#002114] font-bold rounded-xl px-6 py-3 transition glow-emerald">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3c-.4.4-.6 1-.6 1.7v16c0 .7.2 1.3.6 1.7l9-9-9-9.4Zm10.4 10 2.6 2.7L6.5 21c-.5.2-1 .1-1.4-.1l8.9-8.6Zm4.6-4.7-3.4 3.4 3.4 3.4c1-.6 2-1.5 2-2.4s-1-1.8-2-2.4Zm-4.6 3.3-8.9-8.6c.4-.2.9-.3 1.4-.1l10.1 5.9-2.6 2.8Z"/></svg>
+                    Get it on Google Play
+                </a>
+                <a href="#features" class="text-sm text-text1 hover:text-emerald1 transition underline-offset-4 hover:underline">
+                    See features →
+                </a>
+            </div>
+            <p class="mt-4 text-xs text-text2">Free to download · No account required</p>
+        </div>
+
+        <!-- Timer ring visual -->
+        <div class="relative flex items-center justify-center">
+            <div class="ring-pulse relative">
+                <svg width="340" height="340" viewBox="0 0 260 260" class="glow-emerald-lg rounded-full">
+                    <defs>
+                        <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%"  stop-color="#34D399" />
+                            <stop offset="60%" stop-color="#A78BFA" />
+                            <stop offset="100%" stop-color="#FBBF24" />
+                        </linearGradient>
+                        <filter id="softGlow">
+                            <feGaussianBlur stdDeviation="3" result="b" />
+                            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <circle cx="130" cy="130" r="115" fill="none" stroke="#161B24" stroke-width="16" />
+                    <circle cx="130" cy="130" r="115" fill="none"
+                            stroke="url(#ringGrad)"
+                            stroke-width="16" stroke-linecap="round"
+                            stroke-dasharray="723"
+                            stroke-dashoffset="180"
+                            transform="rotate(-90 130 130)"
+                            filter="url(#softGlow)"
+                            class="ring-progress" />
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                    <div class="text-5xl font-extrabold text-white tabular-nums">24:00</div>
+                    <div class="mt-2 text-xs uppercase tracking-widest text-text2">Deep work</div>
+                    <div class="mt-4 inline-flex items-center gap-1.5 text-xs text-emerald1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald1 animate-pulse"></span>
+                        In session
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE STRIP ============ -->
+<section id="features" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 hover:border-emerald1/50 transition">
+            <div class="w-11 h-11 rounded-xl bg-emerald1/10 text-emerald1 flex items-center justify-center text-xl">⏱️</div>
+            <h3 class="mt-4 text-lg font-semibold text-white">Know what to start next</h3>
+            <p class="mt-2 text-sm text-text2">Turn tasks and projects into one clear session you can start in seconds.</p>
+        </div>
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 hover:border-violet1/50 transition">
+            <div class="w-11 h-11 rounded-xl bg-violet1/10 text-violet1 flex items-center justify-center text-xl">🔄</div>
+            <h3 class="mt-4 text-lg font-semibold text-white">Keep momentum when plans change</h3>
+            <p class="mt-2 text-sm text-text2">Extend, split, or reschedule without breaking your flow.</p>
+        </div>
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 hover:border-gold/50 transition">
+            <div class="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl">📈</div>
+            <h3 class="mt-4 text-lg font-semibold text-white">See progress that pulls you back</h3>
+            <p class="mt-2 text-sm text-text2">Streaks, consistency, and insights make it easier to return tomorrow.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <div class="text-center max-w-2xl mx-auto">
+        <div class="text-xs uppercase tracking-[0.2em] text-emerald1">How it works</div>
+        <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">Three steps. Then a rhythm.</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <!-- Step 1 -->
+        <div class="rounded-2xl bg-surface border border-outline1 p-6">
+            <div class="w-10 h-10 rounded-full bg-emerald1 text-[#002114] font-bold flex items-center justify-center glow-emerald">1</div>
+            <h3 class="mt-5 text-lg font-semibold text-white">Add a task</h3>
+            <p class="mt-2 text-sm text-text2">Give it a duration, energy level, and type — session or project.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="rounded-2xl bg-surface border border-outline1 p-6">
+            <div class="w-10 h-10 rounded-full bg-emerald1 text-[#002114] font-bold flex items-center justify-center glow-emerald">2</div>
+            <h3 class="mt-5 text-lg font-semibold text-white">Start your session</h3>
+            <p class="mt-2 text-sm text-text2">The timer ring counts down. Subtasks keep you on track.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="rounded-2xl bg-surface border border-outline1 p-6">
+            <div class="w-10 h-10 rounded-full bg-emerald1 text-[#002114] font-bold flex items-center justify-center glow-emerald">3</div>
+            <h3 class="mt-5 text-lg font-semibold text-white">Watch your rhythm grow</h3>
+            <p class="mt-2 text-sm text-text2">Every session earns XP. Unlock badges. Build streaks.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE DEEP DIVE 1 — Focus Sessions ============ -->
+<section class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+        <div class="text-xs uppercase tracking-[0.2em] text-emerald1">Focus Sessions</div>
+        <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">A timer that celebrates you</h2>
+        <p class="mt-4 text-text2">Start a session on any task. Watch your progress ring fill up. When you finish, confetti celebrates your win. Rescue Mode helps when focus drifts — extend, split, or reschedule without guilt.</p>
+        <ul class="mt-6 space-y-2 text-sm text-text1">
+            <li class="flex gap-2"><span class="text-emerald1">✓</span> Beautiful animated progress ring</li>
+            <li class="flex gap-2"><span class="text-emerald1">✓</span> Subtask checklist inside every session</li>
+            <li class="flex gap-2"><span class="text-emerald1">✓</span> Rescue Mode when things go sideways</li>
+        </ul>
+    </div>
+    <div class="flex justify-center float">
+        <div class="phone">
+            <div class="phone-inner p-4 flex flex-col">
+                <div class="flex justify-between items-center text-[10px] text-text2">
+                    <span>9:41</span><span>● ●</span>
+                </div>
+                <div class="mt-3 text-[10px] uppercase tracking-widest text-text2 text-center">Focus session</div>
+                <div class="flex-1 flex items-center justify-center">
+                    <div class="relative">
+                        <svg width="170" height="170" viewBox="0 0 170 170">
+                            <circle cx="85" cy="85" r="72" fill="none" stroke="#161B24" stroke-width="10" />
+                            <circle cx="85" cy="85" r="72" fill="none" stroke="url(#ringGrad)" stroke-width="10"
+                                    stroke-linecap="round" stroke-dasharray="452" stroke-dashoffset="140"
+                                    transform="rotate(-90 85 85)" />
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <div class="text-2xl font-bold text-white">17:24</div>
+                            <div class="text-[9px] text-text2 mt-0.5">Writing draft</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-1.5">
+                    <div class="flex items-center gap-2 text-[10px] bg-surface2 rounded-lg px-2 py-1.5">
+                        <span class="w-2 h-2 rounded border border-emerald1 bg-emerald1"></span>
+                        <span class="text-text2 line-through">Outline sections</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-[10px] bg-surface2 rounded-lg px-2 py-1.5">
+                        <span class="w-2 h-2 rounded border border-outline1"></span>
+                        <span class="text-text1">Write intro</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-[10px] bg-surface2 rounded-lg px-2 py-1.5">
+                        <span class="w-2 h-2 rounded border border-outline1"></span>
+                        <span class="text-text1">Polish first pass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE DEEP DIVE 2 — Smart Prioritization ============ -->
+<section class="bg-surface/40 border-y border-outline1/40">
+    <div class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 flex justify-center float">
+            <div class="phone">
+                <div class="phone-inner p-3 flex flex-col gap-2 text-[10px]">
+                    <div class="flex justify-between items-center text-text2">
+                        <span>9:41</span><span>Home</span>
+                    </div>
+                    <div class="mt-1 rounded-xl gradient-border p-3">
+                        <div class="text-[9px] uppercase tracking-widest text-emerald1">Next best session</div>
+                        <div class="mt-1 text-white font-semibold text-xs">Write project spec</div>
+                        <div class="mt-0.5 text-text2 text-[9px]">45 min · High energy</div>
+                        <button class="mt-2 w-full bg-emerald1 text-[#002114] font-bold rounded-md py-1.5 text-[10px]">Start session</button>
+                    </div>
+                    <div class="text-[9px] uppercase tracking-widest text-text2 mt-1">Quick wins</div>
+                    <div class="bg-surface2 rounded-lg p-2 flex justify-between items-center">
+                        <span class="text-text1">Reply to emails</span><span class="text-text2">10m</span>
+                    </div>
+                    <div class="bg-surface2 rounded-lg p-2 flex justify-between items-center">
+                        <span class="text-text1">Update calendar</span><span class="text-text2">5m</span>
+                    </div>
+                    <div class="text-[9px] uppercase tracking-widest text-text2 mt-1">Focus blocks</div>
+                    <div class="bg-surface2 rounded-lg p-2 flex justify-between items-center">
+                        <span class="text-text1">Deep research</span><span class="text-violet1">60m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-1 md:order-2">
+            <div class="text-xs uppercase tracking-[0.2em] text-violet1">Smart Prioritization</div>
+            <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">Your home screen does the thinking</h2>
+            <p class="mt-4 text-text2">Next Best Session shows you exactly what to start. Quick Wins clear your list fast. Focus Blocks handle deep work. Three working styles: Finisher, Deep Worker, Consistency Builder.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <span class="text-xs font-medium border border-outline1 rounded-full px-3 py-1 text-text1">Finisher</span>
+                <span class="text-xs font-medium border border-outline1 rounded-full px-3 py-1 text-text1">Deep Worker</span>
+                <span class="text-xs font-medium border border-outline1 rounded-full px-3 py-1 text-text1">Consistency Builder</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE DEEP DIVE 3 — Gamification ============ -->
+<section class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+        <div class="text-xs uppercase tracking-[0.2em] text-gold">Level up</div>
+        <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">Level up your consistency</h2>
+        <p class="mt-4 text-text2">Earn XP every session. Level up your identity. Unlock achievement badges. Your Rhythm Score tracks consistency over 14 days. Weekly charts show when and how you work best.</p>
+        <div class="mt-6 grid grid-cols-3 gap-3 max-w-sm">
+            <div class="rounded-xl bg-surface border border-outline1 p-3 text-center">
+                <div class="text-2xl">🔥</div>
+                <div class="text-xs text-text1 font-semibold mt-1">7-day</div>
+                <div class="text-[10px] text-text2">streak</div>
+            </div>
+            <div class="rounded-xl bg-surface border border-outline1 p-3 text-center">
+                <div class="text-2xl">⚡</div>
+                <div class="text-xs text-text1 font-semibold mt-1">Deep</div>
+                <div class="text-[10px] text-text2">worker</div>
+            </div>
+            <div class="rounded-xl bg-surface border border-outline1 p-3 text-center">
+                <div class="text-2xl">🏆</div>
+                <div class="text-xs text-text1 font-semibold mt-1">Finisher</div>
+                <div class="text-[10px] text-text2">badge</div>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center float">
+        <div class="phone">
+            <div class="phone-inner p-3 flex flex-col text-[10px]">
+                <div class="flex justify-between items-center text-text2">
+                    <span>9:41</span><span>Stats</span>
+                </div>
+                <div class="mt-2 relative flex justify-center">
+                    <svg width="180" height="110" viewBox="0 0 180 110">
+                        <path d="M20 100 A 70 70 0 0 1 160 100" fill="none" stroke="#161B24" stroke-width="14" stroke-linecap="round" />
+                        <path d="M20 100 A 70 70 0 0 1 160 100" fill="none" stroke="url(#ringGrad)" stroke-width="14" stroke-linecap="round"
+                              stroke-dasharray="220" stroke-dashoffset="60" />
+                    </svg>
+                    <div class="absolute inset-0 flex flex-col items-center justify-end pb-2">
+                        <div class="text-2xl font-extrabold text-white">Lv 14</div>
+                        <div class="text-[9px] text-text2">Deep Worker</div>
+                    </div>
+                </div>
+                <div class="mt-2 grid grid-cols-2 gap-2">
+                    <div class="rounded-lg bg-surface2 p-2">
+                        <div class="text-[9px] text-text2 uppercase">Rhythm score</div>
+                        <div class="text-white font-bold text-sm">82<span class="text-[9px] text-text2">/100</span></div>
+                    </div>
+                    <div class="rounded-lg bg-surface2 p-2">
+                        <div class="text-[9px] text-text2 uppercase">Streak</div>
+                        <div class="text-gold font-bold text-sm">🔥 12d</div>
+                    </div>
+                </div>
+                <div class="mt-2 rounded-lg bg-surface2 p-2">
+                    <div class="text-[9px] text-text2 uppercase mb-1">This week</div>
+                    <div class="flex items-end gap-1 h-10">
+                        <div class="flex-1 bg-emerald1/70 rounded-sm" style="height:40%"></div>
+                        <div class="flex-1 bg-emerald1/70 rounded-sm" style="height:70%"></div>
+                        <div class="flex-1 bg-emerald1/70 rounded-sm" style="height:55%"></div>
+                        <div class="flex-1 bg-emerald1 rounded-sm" style="height:95%"></div>
+                        <div class="flex-1 bg-emerald1/70 rounded-sm" style="height:60%"></div>
+                        <div class="flex-1 bg-violet1/70 rounded-sm" style="height:30%"></div>
+                        <div class="flex-1 bg-violet1/70 rounded-sm" style="height:20%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE DEEP DIVE 4 — Plan Ahead (PRO) ============ -->
+<section class="bg-surface/40 border-y border-outline1/40">
+    <div class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 flex justify-center float">
+            <div class="phone">
+                <div class="phone-inner p-3 flex flex-col text-[10px]">
+                    <div class="flex justify-between items-center text-text2">
+                        <span>Week 27</span>
+                        <span class="text-gold font-bold">PRO</span>
+                    </div>
+                    <div class="mt-2 grid grid-cols-7 gap-1 text-center text-[8px] text-text2">
+                        <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                    </div>
+                    <div class="mt-1 grid grid-cols-7 gap-1 flex-1">
+                        <div class="bg-surface2 rounded-md p-1 flex flex-col gap-1">
+                            <div class="h-3 rounded-sm bg-emerald1/60"></div>
+                            <div class="h-2 rounded-sm bg-violet1/60"></div>
+                        </div>
+                        <div class="bg-surface2 rounded-md p-1 flex flex-col gap-1">
+                            <div class="h-2 rounded-sm bg-gold/60"></div>
+                            <div class="h-4 rounded-sm bg-emerald1/60"></div>
+                        </div>
+                        <div class="bg-surface2 rounded-md p-1 flex flex-col gap-1">
+                            <div class="h-3 rounded-sm bg-emerald1/60"></div>
+                            <div class="h-3 rounded-sm bg-violet1/60"></div>
+                            <div class="h-2 rounded-sm bg-gold/60"></div>
+                        </div>
+                        <div class="bg-surface2 rounded-md p-1 flex flex-col gap-1">
+                            <div class="h-2 rounded-sm bg-emerald1/60"></div>
+                        </div>
+                        <div class="bg-surface2 rounded-md p-1 flex flex-col gap-1">
+                            <div class="h-4 rounded-sm bg-violet1/60"></div>
+                            <div class="h-2 rounded-sm bg-emerald1/60"></div>
+                        </div>
+                        <div class="bg-surface2 rounded-md p-1 flex flex-col gap-1">
+                            <div class="h-2 rounded-sm bg-gold/60"></div>
+                        </div>
+                        <div class="bg-surface2 rounded-md p-1"></div>
+                    </div>
+                    <div class="mt-2 text-[9px] uppercase tracking-widest text-text2">Unscheduled</div>
+                    <div class="mt-1 flex flex-wrap gap-1">
+                        <span class="text-[9px] bg-surface2 border border-outline1 rounded px-1.5 py-0.5 text-text1">Read paper</span>
+                        <span class="text-[9px] bg-surface2 border border-outline1 rounded px-1.5 py-0.5 text-text1">Plan Q3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-1 md:order-2">
+            <div class="flex items-center gap-2">
+                <span class="text-xs uppercase tracking-[0.2em] text-emerald1">Plan Ahead</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-gold/20 text-gold border border-gold/30">PRO</span>
+            </div>
+            <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">Plan your week. Own your year.</h2>
+            <p class="mt-4 text-text2">Schedule tasks across your week, month, or year. Assign goals to morning, afternoon, or evening. Drag unscheduled work into place. See your entire week in one view.</p>
+            <a href="#pricing" class="mt-6 inline-flex items-center gap-1 text-emerald1 font-semibold hover:text-white transition">
+                Upgrade to Pro →
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <div class="text-center max-w-2xl mx-auto">
+        <div class="text-xs uppercase tracking-[0.2em] text-gold">RhythmDo Pro</div>
+        <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">Start free, upgrade anytime</h2>
+        <p class="mt-3 text-text2">All Pro features, one price. Cancel anytime.</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <!-- Monthly -->
+        <div class="rounded-2xl bg-surface border border-outline1 p-6 flex flex-col">
+            <div class="text-sm text-text2">Monthly</div>
+            <div class="mt-2 flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-white">$3.99</span>
+                <span class="text-text2 text-sm">/ month</span>
+            </div>
+            <p class="mt-2 text-sm text-text2">Great for trying it out.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.oushen.rhythmdo"
+               target="_blank" rel="noopener"
+               class="mt-6 w-full text-center bg-surface2 hover:bg-card text-white border border-outline1 rounded-xl px-4 py-3 font-semibold transition">
+                Go monthly
+            </a>
+        </div>
+        <!-- Yearly -->
+        <div class="gradient-border p-6 flex flex-col relative">
+            <span class="absolute -top-3 left-6 text-[10px] font-bold px-2.5 py-1 rounded-full bg-gold text-[#3d2a00]">BEST VALUE · −49%</span>
+            <div class="text-sm text-gold">Yearly</div>
+            <div class="mt-2 flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-white">$23.99</span>
+                <span class="text-text2 text-sm">/ year</span>
+            </div>
+            <p class="mt-2 text-sm text-text2">About $2 / month.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.oushen.rhythmdo"
+               target="_blank" rel="noopener"
+               class="mt-6 w-full text-center bg-emerald1 hover:bg-emerald2 text-[#002114] rounded-xl px-4 py-3 font-bold transition glow-emerald">
+                Go yearly
+            </a>
+        </div>
+    </div>
+
+    <!-- Features list -->
+    <ul class="mt-12 grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto text-sm">
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Plan Ahead (week, month, year goals)</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Scheduling (specific days &amp; times)</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Unlimited tasks &amp; projects</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Full insights history</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Unlimited rescue mode</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Ad-free experience</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Smart Reminders</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> All themes</li>
+    </ul>
+</section>
+
+<!-- ============ DOWNLOAD CTA BANNER ============ -->
+<section id="download" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <div class="gradient-border p-10 md:p-14 text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white">Ready to find your <span class="gradient-text">rhythm</span>?</h2>
+        <p class="mt-4 text-text2 max-w-xl mx-auto">Free to download. No account required. Build the habit today.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.oushen.rhythmdo"
+           target="_blank" rel="noopener"
+           class="mt-8 inline-block">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                 alt="Get it on Google Play"
+                 class="h-16 md:h-20 mx-auto" />
+        </a>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-outline1/40 mt-8">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between text-sm text-text2">
+        <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald1"></span>
+            <span class="font-semibold text-white">RhythmDo</span>
+            <span class="text-text2">© 2026 · Built for makers, thinkers, and finishers.</span>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="/about/" class="hover:text-white transition">About</a>
+            <a href="/delete-account/" class="hover:text-white transition">Delete Account</a>
+            <a href="/privacy/" class="hover:text-white transition">Privacy Policy</a>
+            <a href="mailto:contact@rhythmdo.app" class="hover:text-white transition">Contact</a>
+        </div>
+        <div class="flex gap-4 text-xs">
+            <button class="hover:text-white transition">English</button>
+            <span class="text-outline1">·</span>
+            <button class="hover:text-white transition">Français</button>
+            <span class="text-outline1">·</span>
+            <button class="hover:text-white transition" dir="rtl">عربي</button>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
