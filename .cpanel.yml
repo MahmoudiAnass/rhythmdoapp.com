@@ -6,6 +6,7 @@ deployment:
     - /bin/cp -R about $DEPLOYPATH
     - /bin/cp -R delete-account $DEPLOYPATH
     - /bin/cp -R screenshots $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R robots.txt $DEPLOYPATH
     - /bin/cp -R sitemap.xml $DEPLOYPATH
     - /bin/cp -R .htaccess $DEPLOYPATH 2>/dev/null || true
