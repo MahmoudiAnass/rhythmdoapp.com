@@ -22,6 +22,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -232,17 +234,17 @@
 <section id="features" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
     <div class="grid md:grid-cols-3 gap-6">
         <div class="rounded-2xl bg-surface border border-outline1 p-6 hover:border-emerald1/50 transition">
-            <div class="w-11 h-11 rounded-xl bg-emerald1/10 text-emerald1 flex items-center justify-center text-xl">⏱️</div>
+            <div class="w-11 h-11 rounded-xl bg-emerald1/10 text-emerald1 flex items-center justify-center text-xl"><i class="fa-solid fa-stopwatch"></i></div>
             <h3 class="mt-4 text-lg font-semibold text-white">Know what to start next</h3>
             <p class="mt-2 text-sm text-text2">Turn tasks and projects into one clear session you can start in seconds.</p>
         </div>
         <div class="rounded-2xl bg-surface border border-outline1 p-6 hover:border-violet1/50 transition">
-            <div class="w-11 h-11 rounded-xl bg-violet1/10 text-violet1 flex items-center justify-center text-xl">🔄</div>
+            <div class="w-11 h-11 rounded-xl bg-violet1/10 text-violet1 flex items-center justify-center text-xl"><i class="fa-solid fa-arrows-rotate"></i></div>
             <h3 class="mt-4 text-lg font-semibold text-white">Keep momentum when plans change</h3>
             <p class="mt-2 text-sm text-text2">Extend, split, or reschedule without breaking your flow.</p>
         </div>
         <div class="rounded-2xl bg-surface border border-outline1 p-6 hover:border-gold/50 transition">
-            <div class="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl">📈</div>
+            <div class="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl"><i class="fa-solid fa-chart-line"></i></div>
             <h3 class="mt-4 text-lg font-semibold text-white">See progress that pulls you back</h3>
             <p class="mt-2 text-sm text-text2">Streaks, consistency, and insights make it easier to return tomorrow.</p>
         </div>
@@ -327,9 +329,9 @@
         <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-white">A timer that celebrates you</h2>
         <p class="mt-4 text-text2">Start a session on any task. Watch your progress ring fill up. When you finish, confetti celebrates your win. Rescue Mode helps when focus drifts — extend, split, or reschedule without guilt.</p>
         <ul class="mt-6 space-y-2 text-sm text-text1">
-            <li class="flex gap-2"><span class="text-emerald1">✓</span> Beautiful animated progress ring</li>
-            <li class="flex gap-2"><span class="text-emerald1">✓</span> Subtask checklist inside every session</li>
-            <li class="flex gap-2"><span class="text-emerald1">✓</span> Rescue Mode when things go sideways</li>
+            <li class="flex gap-2"><span class="text-emerald1"><i class="fa-solid fa-check"></i></span> Beautiful animated progress ring</li>
+            <li class="flex gap-2"><span class="text-emerald1"><i class="fa-solid fa-check"></i></span> Subtask checklist inside every session</li>
+            <li class="flex gap-2"><span class="text-emerald1"><i class="fa-solid fa-check"></i></span> Rescue Mode when things go sideways</li>
         </ul>
     </div>
     <div class="flex justify-center float">
@@ -422,17 +424,17 @@
         <p class="mt-4 text-text2">Earn XP every session. Level up your identity. Unlock achievement badges. Your Rhythm Score tracks consistency over 14 days. Weekly charts show when and how you work best.</p>
         <div class="mt-6 grid grid-cols-3 gap-3 max-w-sm">
             <div class="rounded-xl bg-surface border border-outline1 p-3 text-center">
-                <div class="text-2xl">🔥</div>
+                <div class="text-2xl text-red1"><i class="fa-solid fa-fire"></i></div>
                 <div class="text-xs text-text1 font-semibold mt-1">7-day</div>
                 <div class="text-[10px] text-text2">streak</div>
             </div>
             <div class="rounded-xl bg-surface border border-outline1 p-3 text-center">
-                <div class="text-2xl">⚡</div>
+                <div class="text-2xl text-violet1"><i class="fa-solid fa-bolt"></i></div>
                 <div class="text-xs text-text1 font-semibold mt-1">Deep</div>
                 <div class="text-[10px] text-text2">worker</div>
             </div>
             <div class="rounded-xl bg-surface border border-outline1 p-3 text-center">
-                <div class="text-2xl">🏆</div>
+                <div class="text-2xl text-gold"><i class="fa-solid fa-trophy"></i></div>
                 <div class="text-xs text-text1 font-semibold mt-1">Finisher</div>
                 <div class="text-[10px] text-text2">badge</div>
             </div>
@@ -462,7 +464,7 @@
                     </div>
                     <div class="rounded-lg bg-surface2 p-2">
                         <div class="text-[9px] text-text2 uppercase">Streak</div>
-                        <div class="text-gold font-bold text-sm">🔥 12d</div>
+                        <div class="text-gold font-bold text-sm"><i class="fa-solid fa-fire text-red1"></i> 12d</div>
                     </div>
                 </div>
                 <div class="mt-2 rounded-lg bg-surface2 p-2">
@@ -584,14 +586,14 @@
 
     <!-- Features list -->
     <ul class="mt-12 grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto text-sm">
-        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Plan Ahead (week, month, year goals)</li>
-        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Scheduling (specific days &amp; times)</li>
-        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Unlimited tasks &amp; projects</li>
-        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Full insights history</li>
-        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Unlimited rescue mode</li>
-        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Ad-free experience</li>
-        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> Smart Reminders</li>
-        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5">✅</span> All themes</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5"><i class="fa-solid fa-circle-check"></i></span> Plan Ahead (week, month, year goals)</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5"><i class="fa-solid fa-circle-check"></i></span> Scheduling (specific days &amp; times)</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5"><i class="fa-solid fa-circle-check"></i></span> Unlimited tasks &amp; projects</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5"><i class="fa-solid fa-circle-check"></i></span> Full insights history</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5"><i class="fa-solid fa-circle-check"></i></span> Unlimited rescue mode</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5"><i class="fa-solid fa-circle-check"></i></span> Ad-free experience</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5"><i class="fa-solid fa-circle-check"></i></span> Smart Reminders</li>
+        <li class="flex items-start gap-2 text-text1"><span class="text-emerald1 mt-0.5"><i class="fa-solid fa-circle-check"></i></span> All themes</li>
     </ul>
 </section>
 
