@@ -5,6 +5,7 @@ deployment:
     - /bin/cp -R index.html $DEPLOYPATH
     - /bin/cp -R about $DEPLOYPATH
     - /bin/cp -R delete-account $DEPLOYPATH
+    - /bin/cp -R privacy $DEPLOYPATH
     - /bin/cp -R screenshots $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R robots.txt $DEPLOYPATH

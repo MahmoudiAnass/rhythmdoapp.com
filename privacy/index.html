@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — RhythmDo</title>
+    <meta name="description" content="How RhythmDo: Timebox Tasks collects, uses, and protects your data." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#06090F" />
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        bg: '#06090F', surface: '#0E1117', surface2: '#161B24', card: '#1F2633',
+                        emerald1: '#34D399', emerald2: '#047857',
+                        gold: '#FBBF24', violet1: '#A78BFA', red1: '#FF6B6B',
+                        text1: '#E5E7EB', text2: '#9CA3AF', outline1: '#374151'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        html, body { background: #06090F; color: #E5E7EB; font-family: 'Inter', system-ui, sans-serif; }
+        .dot-bg { background-image: radial-gradient(circle, #374151 1px, transparent 1px); background-size: 22px 22px; }
+        .gradient-text {
+            background: linear-gradient(90deg, #34D399 0%, #A78BFA 50%, #FBBF24 100%);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+        .gradient-border { position: relative; background: #0E1117; border-radius: 1rem; }
+        .gradient-border::before {
+            content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit;
+            background: linear-gradient(135deg, #34D399, #A78BFA, #FBBF24);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+        }
+        .glow-emerald { box-shadow: 0 0 32px rgba(52, 211, 153, 0.25); }
+        html { scroll-behavior: smooth; }
+        ::selection { background: rgba(52,211,153,.35); color: #E5E7EB; }
+        /* Anchor offset so section headings clear the sticky nav */
+        .anchor { scroll-margin-top: 90px; }
+        .prose-r a { color: #34D399; }
+        .prose-r a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="antialiased">
+
+<!-- Nav -->
+<header class="sticky top-0 z-40 backdrop-blur bg-bg/80 border-b border-outline1/40">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="/" class="flex items-center gap-2 group">
+            <img src="/assets/logo.png" alt="RhythmDo" width="32" height="32" class="w-8 h-8 group-hover:scale-110 transition drop-shadow-[0_0_12px_rgba(52,211,153,0.35)]" />
+            <span class="font-bold text-lg tracking-tight text-white">RhythmDo</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-text2">
+            <a href="/#features" class="hover:text-white transition">Features</a>
+            <a href="/#how" class="hover:text-white transition">How it works</a>
+            <a href="/#pricing" class="hover:text-white transition">Pro</a>
+            <a href="/about/" class="hover:text-white transition">About</a>
+            <a href="/#download" class="hover:text-white transition">Download</a>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.oushen.rhythmdo"
+           target="_blank" rel="noopener"
+           class="bg-emerald1 hover:bg-emerald2 text-[#002114] font-bold rounded-xl px-4 py-2 text-sm transition glow-emerald">
+            Get it on Google Play
+        </a>
+    </nav>
+</header>
+
+<!-- Header -->
+<section class="relative overflow-hidden">
+    <div class="absolute inset-0 dot-bg opacity-[0.3] pointer-events-none"></div>
+    <div class="relative max-w-3xl mx-auto px-6 pt-16 pb-10">
+        <a href="/" class="text-sm text-text2 hover:text-emerald1 transition inline-flex items-center gap-1">
+            ← Back to RhythmDo
+        </a>
+        <div class="mt-8 inline-flex items-center gap-2 rounded-full border border-outline1 bg-surface/60 px-3 py-1 text-xs text-text2">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald1"></span>
+            Legal · Privacy
+        </div>
+        <h1 class="mt-5 text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+            Privacy Policy
+        </h1>
+        <p class="mt-3 text-2xl font-semibold gradient-text">RhythmDo: Timebox Tasks</p>
+        <p class="mt-4 text-sm text-text2">Last updated: <time datetime="2026-07-02">July 2, 2026</time></p>
+    </div>
+</section>
+
+<!-- Content -->
+<section class="max-w-3xl mx-auto px-6 pb-16">
+
+    <!-- Intro card -->
+    <div class="rounded-2xl bg-surface border border-outline1 p-6 md:p-8 text-text1 leading-relaxed">
+        <p>
+            This Privacy Policy applies to the <span class="text-white font-semibold">RhythmDo: Timebox Tasks</span>
+            application (the &ldquo;Application&rdquo;) for Android, developed by
+            <span class="text-white font-semibold">Oushen</span> (&ldquo;Service Provider&rdquo;).
+            This service is provided <span class="text-white font-semibold">&ldquo;AS IS&rdquo;</span>.
+        </p>
+    </div>
+
+    <!-- Table of contents -->
+    <div class="mt-6 rounded-2xl bg-surface2 border border-outline1 p-6">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-text2">Contents</h2>
+        <ol class="mt-3 grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-text2 list-none">
+            <li><a href="#s1"  class="hover:text-emerald1 transition">1. Information you provide</a></li>
+            <li><a href="#s2"  class="hover:text-emerald1 transition">2. Information collected automatically</a></li>
+            <li><a href="#s3"  class="hover:text-emerald1 transition">3. How information is used</a></li>
+            <li><a href="#s4"  class="hover:text-emerald1 transition">4. Third-party services</a></li>
+            <li><a href="#s5"  class="hover:text-emerald1 transition">5. Advertising &amp; consent</a></li>
+            <li><a href="#s6"  class="hover:text-emerald1 transition">6. Data sharing</a></li>
+            <li><a href="#s7"  class="hover:text-emerald1 transition">7. Data retention</a></li>
+            <li><a href="#s8"  class="hover:text-emerald1 transition">8. Account &amp; data deletion</a></li>
+            <li><a href="#s9"  class="hover:text-emerald1 transition">9. Children&rsquo;s privacy</a></li>
+            <li><a href="#s10" class="hover:text-emerald1 transition">10. Security</a></li>
+            <li><a href="#s11" class="hover:text-emerald1 transition">11. Changes to this policy</a></li>
+            <li><a href="#s12" class="hover:text-emerald1 transition">12. Contact</a></li>
+        </ol>
+    </div>
+
+    <!-- Body -->
+    <div class="mt-8 rounded-2xl bg-surface border border-outline1 p-6 md:p-10 text-text1 leading-relaxed prose-r divide-y divide-outline1/40">
+
+        <!-- 1 -->
+        <div id="s1" class="anchor pb-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">01</span>
+                <h2 class="text-2xl font-bold text-white">Information you provide</h2>
+            </div>
+            <p class="mt-4 text-text2">
+                The Application allows optional sign-in with your Google account. If you choose to sign in,
+                the Application receives your <span class="text-text1 font-medium">name</span>,
+                <span class="text-text1 font-medium">email address</span>, and a
+                <span class="text-text1 font-medium">unique user ID</span> from Google.
+                Sign-in is not required to use the Application &mdash; users who do not sign in remain anonymous.
+            </p>
+        </div>
+
+        <!-- 2 -->
+        <div id="s2" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">02</span>
+                <h2 class="text-2xl font-bold text-white">Information collected automatically</h2>
+            </div>
+            <p class="mt-4 text-text2">
+                The Application and its third-party SDKs automatically collect:
+            </p>
+            <ul class="mt-4 space-y-3 text-text2">
+                <li class="flex gap-3">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-emerald1 flex-none"></span>
+                    <span><span class="text-white font-semibold">Device identifiers</span> &mdash; including the Android Advertising ID and Firebase Installation ID.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-emerald1 flex-none"></span>
+                    <span><span class="text-white font-semibold">Device information</span> &mdash; device model, operating system version, language, and time zone.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-emerald1 flex-none"></span>
+                    <span><span class="text-white font-semibold">App usage data</span> &mdash; screens visited, features used, session events, and in-app interactions.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-emerald1 flex-none"></span>
+                    <span><span class="text-white font-semibold">Crash and diagnostic data</span> &mdash; stack traces, app state at the time of a crash, and performance diagnostics.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-emerald1 flex-none"></span>
+                    <span><span class="text-white font-semibold">Purchase history</span> &mdash; subscription status and purchase events processed through Google Play Billing.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-emerald1 flex-none"></span>
+                    <span><span class="text-white font-semibold">Approximate location</span> &mdash; derived from IP address by advertising services for ad targeting. The Application does not request or use precise GPS location.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 3 -->
+        <div id="s3" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">03</span>
+                <h2 class="text-2xl font-bold text-white">How information is used</h2>
+            </div>
+            <p class="mt-4 text-text2">Collected information is used to:</p>
+            <ul class="mt-4 space-y-3 text-text2">
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-violet1 flex-none"></span><span>Authenticate users and manage accounts (Google Sign-In).</span></li>
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-violet1 flex-none"></span><span>Unlock and verify premium subscription access (Google Play Billing).</span></li>
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-violet1 flex-none"></span><span>Improve app stability and diagnose crashes (Firebase Crashlytics).</span></li>
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-violet1 flex-none"></span><span>Understand how users interact with the Application (Firebase Analytics).</span></li>
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-violet1 flex-none"></span><span>Display relevant advertisements (Google AdMob).</span></li>
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-violet1 flex-none"></span><span>Deliver push notifications about tasks and reminders (Firebase Cloud Messaging).</span></li>
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-violet1 flex-none"></span><span>Personalize app behavior based on your preferences (Firebase Remote Config).</span></li>
+            </ul>
+        </div>
+
+        <!-- 4 -->
+        <div id="s4" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">04</span>
+                <h2 class="text-2xl font-bold text-white">Third-party services</h2>
+            </div>
+            <p class="mt-4 text-text2">
+                The Application uses the following third-party services, each governed by their own privacy policies:
+            </p>
+            <ul class="mt-4 grid sm:grid-cols-2 gap-3">
+                <li>
+                    <a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener"
+                       class="block rounded-xl border border-outline1 bg-surface2 px-4 py-3 hover:border-emerald1 hover:bg-surface2/60 transition">
+                        <span class="block text-white font-semibold text-sm">Google Play Services</span>
+                        <span class="block text-xs text-text2 mt-0.5">policies.google.com &rarr;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener"
+                       class="block rounded-xl border border-outline1 bg-surface2 px-4 py-3 hover:border-emerald1 hover:bg-surface2/60 transition">
+                        <span class="block text-white font-semibold text-sm">Google AdMob</span>
+                        <span class="block text-xs text-text2 mt-0.5">support.google.com/admob &rarr;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener"
+                       class="block rounded-xl border border-outline1 bg-surface2 px-4 py-3 hover:border-emerald1 hover:bg-surface2/60 transition">
+                        <span class="block text-white font-semibold text-sm">Google Analytics for Firebase</span>
+                        <span class="block text-xs text-text2 mt-0.5">firebase.google.com &rarr;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener"
+                       class="block rounded-xl border border-outline1 bg-surface2 px-4 py-3 hover:border-emerald1 hover:bg-surface2/60 transition">
+                        <span class="block text-white font-semibold text-sm">Firebase Crashlytics</span>
+                        <span class="block text-xs text-text2 mt-0.5">firebase.google.com &rarr;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener"
+                       class="block rounded-xl border border-outline1 bg-surface2 px-4 py-3 hover:border-emerald1 hover:bg-surface2/60 transition">
+                        <span class="block text-white font-semibold text-sm">Firebase Authentication</span>
+                        <span class="block text-xs text-text2 mt-0.5">firebase.google.com &rarr;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener"
+                       class="block rounded-xl border border-outline1 bg-surface2 px-4 py-3 hover:border-emerald1 hover:bg-surface2/60 transition">
+                        <span class="block text-white font-semibold text-sm">Firebase Cloud Messaging</span>
+                        <span class="block text-xs text-text2 mt-0.5">firebase.google.com &rarr;</span>
+                    </a>
+                </li>
+                <li class="sm:col-span-2">
+                    <a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener"
+                       class="block rounded-xl border border-outline1 bg-surface2 px-4 py-3 hover:border-emerald1 hover:bg-surface2/60 transition">
+                        <span class="block text-white font-semibold text-sm">Google Play Billing</span>
+                        <span class="block text-xs text-text2 mt-0.5">payments.google.com &rarr;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 5 -->
+        <div id="s5" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">05</span>
+                <h2 class="text-2xl font-bold text-white">Advertising &amp; consent</h2>
+            </div>
+            <p class="mt-4 text-text2">
+                The Application displays ads provided by Google AdMob. In regions subject to
+                <span class="text-white font-medium">GDPR</span> or
+                <span class="text-white font-medium">CCPA</span>, the Application presents a consent dialog
+                before serving personalized ads. You may withdraw or change your consent at any time
+                through your device settings or by resetting your Advertising ID.
+            </p>
+        </div>
+
+        <!-- 6 -->
+        <div id="s6" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">06</span>
+                <h2 class="text-2xl font-bold text-white">Data sharing</h2>
+            </div>
+            <p class="mt-4 text-text2">
+                The Service Provider <span class="text-white font-semibold">does not sell your personal data</span>.
+                Information may be shared:
+            </p>
+            <ul class="mt-4 space-y-3 text-text2">
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-gold flex-none"></span><span>With third-party service providers listed above, solely to operate the Application.</span></li>
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-gold flex-none"></span><span>As required by law, such as to comply with a legal obligation or government request.</span></li>
+                <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-gold flex-none"></span><span>To protect the rights, safety, or property of the Service Provider or users.</span></li>
+            </ul>
+        </div>
+
+        <!-- 7 -->
+        <div id="s7" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">07</span>
+                <h2 class="text-2xl font-bold text-white">Data retention</h2>
+            </div>
+            <div class="mt-4 overflow-x-auto">
+                <table class="w-full text-sm border border-outline1 rounded-xl overflow-hidden">
+                    <thead class="bg-surface2 text-text2">
+                        <tr>
+                            <th class="text-left px-4 py-3 font-semibold">Category</th>
+                            <th class="text-left px-4 py-3 font-semibold">Retention</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline1/40">
+                        <tr>
+                            <td class="px-4 py-3 text-white">Account data (name, email, user ID)</td>
+                            <td class="px-4 py-3 text-text2">Retained while your account is active</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 text-white">Crash &amp; analytics data</td>
+                            <td class="px-4 py-3 text-text2">Up to 14 months (Firebase default)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 text-white">Local app data (tasks, sessions, badges, prefs)</td>
+                            <td class="px-4 py-3 text-text2">Stored on-device only &middot; removed on uninstall</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div id="s8" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">08</span>
+                <h2 class="text-2xl font-bold text-white">Account &amp; data deletion</h2>
+            </div>
+            <p class="mt-4 text-text2">
+                You may request deletion of your account and associated data at any time by visiting
+                <a href="/delete-account/" class="text-emerald1 hover:underline">rhythmdoapp.com/delete-account</a>.
+            </p>
+            <p class="mt-3 text-text2">
+                Upon request, your <span class="text-white">Firebase Authentication</span> account and associated analytics data will be deleted within
+                <span class="text-white font-semibold">30 days</span>. Anonymized crash reports may be retained for up to
+                <span class="text-white font-semibold">90 days</span> per Firebase&rsquo;s data retention policy and cannot be linked back to your identity after deletion.
+                Local device data is removed automatically upon uninstalling the Application.
+            </p>
+            <div class="mt-5">
+                <a href="/delete-account/"
+                   class="inline-flex items-center gap-2 rounded-xl border border-outline1 hover:border-emerald1 bg-surface2 px-4 py-2.5 text-sm text-white transition">
+                    Open deletion request form
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div id="s9" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">09</span>
+                <h2 class="text-2xl font-bold text-white">Children&rsquo;s privacy</h2>
+            </div>
+            <p class="mt-4 text-text2">
+                The Application is not directed at children under the age of <span class="text-white">13</span>.
+                The Service Provider does not knowingly collect personal information from children under 13.
+                If you believe a child has provided personal information, please contact us at
+                <a href="mailto:contact@rhythmdoapp.com" class="text-emerald1 hover:underline">contact@rhythmdoapp.com</a>
+                and we will delete it promptly.
+            </p>
+        </div>
+
+        <!-- 10 -->
+        <div id="s10" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">10</span>
+                <h2 class="text-2xl font-bold text-white">Security</h2>
+            </div>
+            <p class="mt-4 text-text2">
+                The Application transmits all data over encrypted connections
+                (<span class="text-white font-medium">HTTPS / TLS</span>). The Service Provider implements
+                reasonable technical and organizational measures to protect your information.
+                However, no system can guarantee absolute security.
+            </p>
+        </div>
+
+        <!-- 11 -->
+        <div id="s11" class="anchor py-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">11</span>
+                <h2 class="text-2xl font-bold text-white">Changes to this policy</h2>
+            </div>
+            <p class="mt-4 text-text2">
+                This Privacy Policy may be updated periodically. Changes will be posted on this page with
+                an updated effective date. Continued use of the Application constitutes acceptance of the
+                updated policy.
+            </p>
+        </div>
+
+        <!-- 12 -->
+        <div id="s12" class="anchor pt-8">
+            <div class="flex items-baseline gap-3">
+                <span class="text-emerald1 font-bold text-sm tracking-widest">12</span>
+                <h2 class="text-2xl font-bold text-white">Contact</h2>
+            </div>
+            <p class="mt-4 text-text2">For privacy questions or data deletion requests:</p>
+
+            <div class="mt-5 grid sm:grid-cols-2 gap-4">
+                <a href="mailto:contact@rhythmdoapp.com"
+                   class="flex items-center gap-3 rounded-xl bg-surface2 border border-outline1 hover:border-emerald1 px-4 py-3 transition">
+                    <span class="w-9 h-9 rounded-lg bg-emerald1/10 flex items-center justify-center text-emerald1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    </span>
+                    <span>
+                        <span class="block text-xs text-text2">Email</span>
+                        <span class="block text-white font-semibold text-sm">contact@rhythmdoapp.com</span>
+                    </span>
+                </a>
+                <a href="https://rhythmdoapp.com" target="_blank" rel="noopener"
+                   class="flex items-center gap-3 rounded-xl bg-surface2 border border-outline1 hover:border-emerald1 px-4 py-3 transition">
+                    <span class="w-9 h-9 rounded-lg bg-violet1/10 flex items-center justify-center text-violet1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+                    </span>
+                    <span>
+                        <span class="block text-xs text-text2">Website</span>
+                        <span class="block text-white font-semibold text-sm">rhythmdoapp.com</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="mt-8 text-xs text-text2 text-center">
+        Prefer to request account deletion right now?
+        <a href="/delete-account/" class="text-emerald1 hover:underline">Open the deletion form &rarr;</a>
+    </p>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-outline1/40 mt-8">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between text-sm text-text2">
+        <div class="flex items-center gap-2">
+            <img src="/assets/logo.png" alt="" width="20" height="20" class="w-5 h-5" />
+            <span class="font-semibold text-white">RhythmDo</span>
+            <span class="text-text2">© 2026 · Built for makers, thinkers, and finishers.</span>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="/about/" class="hover:text-white transition">About</a>
+            <a href="/delete-account/" class="hover:text-white transition">Delete Account</a>
+            <a href="/privacy/" class="hover:text-white transition">Privacy Policy</a>
+            <a href="mailto:contact@rhythmdoapp.com" class="hover:text-white transition">Contact</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -164,7 +164,7 @@ Then browse to <http://localhost:8000>.
 2. Go to [vercel.com/new](https://vercel.com/new) → **Import Git Repository** → select this repo.
 3. Framework preset: **Other**. Build command: *(leave empty)*. Output directory: `./`.
 4. Click **Deploy**.
-5. In **Project Settings → Domains**, add your custom domain (e.g. `rhythmdo.app`).
+5. In **Project Settings → Domains**, add your custom domain (e.g. `rhythmdoapp.com`).
 
 `vercel.json` already handles clean URLs (`/about` works without the slash) and adds baseline security headers.
 
@@ -181,7 +181,7 @@ Then browse to <http://localhost:8000>.
 1. In the repo on GitHub → **Settings → Pages**.
 2. Source: **Deploy from a branch** → Branch: `main` → Folder: `/ (root)`.
 3. Save. Site will be live at `https://mahmoudianass.github.io/rhythmdoapp.com/`.
-4. For a custom domain, add a `CNAME` file at repo root containing your domain (e.g. `rhythmdo.app`), then configure DNS.
+4. For a custom domain, add a `CNAME` file at repo root containing your domain (e.g. `rhythmdoapp.com`), then configure DNS.
 
 Clean URLs work because every page uses folder-based routes (`/about/index.html`).
 
@@ -225,14 +225,15 @@ All copy lives inline in the three `index.html` files — no CMS, no data files.
 | Landing headline, features, pricing | [`index.html`](index.html) |
 | About mission, working styles, counters | [`about/index.html`](about/index.html) |
 | Deletion steps, retention table, form | [`delete-account/index.html`](delete-account/index.html) |
+| Privacy policy sections & third-party list | [`privacy/index.html`](privacy/index.html) |
 | Colors, gradient, fonts | The `<script>tailwind.config = {...}</script>` block at the top of each file |
-| Nav links & footer | Both live at the top and bottom of each page — update all three in sync |
+| Nav links & footer | Both live at the top and bottom of each page — update all pages in sync |
 
 ### Global find-and-replace targets
 When rebranding or updating contacts, use VS Code's global search (`Ctrl+Shift+F`) on:
-- `contact@rhythmdo.app` — support email
+- `contact@rhythmdoapp.com` — support email
 - `com.oushen.rhythmdo` — Android package name
-- `rhythmdo.app` — canonical domain (also in `sitemap.xml`)
+- `rhythmdoapp.com` — canonical domain (also in `sitemap.xml`)
 - `© 2026` — footer year
 
 ---
@@ -246,7 +247,7 @@ The form on `/delete-account` currently submits via `mailto:` — this opens the
 2. Copy the endpoint (e.g. `https://formspree.io/f/xyzabc123`).
 3. In [`delete-account/index.html`](delete-account/index.html), find the `<form>` and replace:
    ```html
-   action="mailto:contact@rhythmdo.app"
+   action="mailto:contact@rhythmdoapp.com"
    method="POST"
    enctype="text/plain"
    ```
@@ -301,13 +302,13 @@ Then, depending on your host:
 
 ## Pre-launch checklist
 
-- [ ] Replace `contact@rhythmdo.app` with the real support email in [`about/index.html`](about/index.html) and [`delete-account/index.html`](delete-account/index.html).
+- [x] ~~Replace `contact@rhythmdo.app`~~ — done, all pages now use `contact@rhythmdoapp.com`.
+- [x] ~~Update the canonical domain~~ — done, `sitemap.xml` + OpenGraph now use `rhythmdoapp.com`.
 - [ ] Update `USERNAME` → real cPanel user in [`.cpanel.yml`](.cpanel.yml).
-- [ ] Update the canonical domain in [`sitemap.xml`](sitemap.xml) and the OpenGraph tags in [`index.html`](index.html).
 - [ ] Choose a form backend for the deletion page (Formspree / Google Form) — see [above](#delete-account-form-backends).
 - [ ] Set up the custom domain on your host (Vercel / cPanel).
 - [ ] Submit the sitemap in [Google Search Console](https://search.google.com/search-console).
-- [ ] Paste the deletion-page URL (`https://rhythmdo.app/delete-account/`) into the Google Play Console **App content → Data safety → Account deletion URL** field.
+- [ ] Paste the deletion-page URL (`https://rhythmdoapp.com/delete-account/`) and the privacy URL (`https://rhythmdoapp.com/privacy/`) into the Google Play Console **App content → Data safety** and **Privacy policy** fields.
 - [ ] (Optional) Add an OG share image at `og-cover.png` and update the `og:image` meta tag.
 - [ ] (Optional) Wire up analytics.
 
